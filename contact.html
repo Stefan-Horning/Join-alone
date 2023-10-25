@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <script src="js/storage.js"></script>
+    <script src="js/register.js"></script>
+    <script src="js/logtinAcc.js"></script>
+    <script src="js/board.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/secondBoard.js"></script>
+    <script src="js/template.js"></script>
+    <script src="js/contact_templates.js"></script>
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="style/contact.css">
+    <link rel="stylesheet" href="style/board.css">
+    <link rel="stylesheet" href="style/addtask.css">
+    <link rel="stylesheet" href="style/headnav.css">
+    <link rel="icon" type="image/svg" href="img/Join-logo.svg">
+</head>
+
+<body onload="includeHTML(); contactInit(); loadLogtinUser();">
+    <div onclick="closeOverdiv()" id="overdiv" class="overdiv">
+        <div onclick="doNotClose(event)" class="Add-contact-div">
+            <img onclick="closeOverdiv()" class="cancel-overbutton" src="img/WhiteC.svg" alt="">
+            <div class="Add-contact">
+                <div>
+                    <img src="img/logoJoin.svg" alt="">
+                    <h4>Add contact</h4>
+                    <span>Tasks are better with a team!</span>
+                    <div class="addContact-line"></div>
+                </div>
+            </div>
+            <div class="form-overdiv">
+                <div class="bigImg">
+                    <img src="img/guest.png" alt="">
+                </div>
+                <form>
+                    <div class="relativ-for-icon">
+                        <input id="name" minlength="2" required placeholder="Name" type="text">
+                        <img src="img/people.svg" alt="">
+                    </div>
+                    <div class="relativ-for-icon">
+                        <input id="email" required placeholder="Email" type="email">
+                        <img src="img/emailicon.svg" alt="">
+                    </div>
+                    <div class="relativ-for-icon">
+                        <input id="phone" required placeholder="Phone" type="number">
+                        <img src="img/phone.svg" alt="">
+                    </div>
+                    <div class="buttons">
+                        <button type="button" onclick="closeOverdiv();" class="cancelButton">Cancel <img id="Cancel"
+                                class="cancelImg" src="img/cancel.svg" alt=""></button>
+                        <button type="submit" onclick="createNewContact(); return false;"
+                            class="create-contactButton">Create contact <img src="img/hook.svg" alt=""></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div w3-include-html="head_navbar.html"></div>
+    <div class="parent-Container">
+        <div class="contact-list-overview" id="contact-list-overview">
+            <div class="contact-list" id="contact-list"></div>
+            
+        </div>
+        <button class="new-contact button desktop-only" onclick="openOverdiv('newContactHTML')">
+            <span>New Contact</span>
+            <img src="img/addContact.svg"></button>
+        <div id="contact-info-container" class="contact-info-container">
+            <div class="contact-info">
+                <div class="overheader-Div">
+                    <div class="Contact-header">
+                        <h1 class="contact-headline-left">Contact</h1>
+                        <div class="contact-headline-vertical-line"></div>
+                        <h3 class="contact-headline-right">Better with a team</h3>
+                    </div>
+                    <div class="closeArrow">
+                        <img onclick="closeOverdivArrow()" src="img/Pfeil.svg" alt="">
+                    </div>
+                </div>
+                <div class="underInformation" id="informationsContacts">
+                </div>
+                <div class="mobileEdit">
+                    <img id="delMobile" src="img/delMobile.svg" alt="">
+                    <img onclick="openEdit('other')" src="img/editMobile.svg" alt="">
+                </div>
+            </div>
+            <div class="contact-details-container"></div>
+        </div>
+        <div class="popupAddTaskContainer" id="popupAddTaskContainer"></div>
+    </div>
+</body>
+
+</html>
