@@ -278,6 +278,7 @@ body {
   flex-direction: column;
   gap: 25px;
   z-index: 10;
+  max-width: 540px;
 }
 
 .popupCard::-webkit-scrollbar {
@@ -703,7 +704,7 @@ body {
 
 .popupCard {
   position: fixed;
-  max-height: 700px;
+  max-height: 60vh;
   overflow-y: scroll !important;
 }
 

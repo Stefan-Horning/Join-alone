@@ -342,6 +342,11 @@ async function showCardPopup(taskId) {
   document.body.appendChild(overlayDiv);
   popupCard.innerHTML = generatePopupCardHtml(task,taskId,subtask,backgroundColor,priorityText,priorityImage,assignedContactsHtml);
 }
+document.addEventListener("click", function(event) {
+  if (event.target.classList.contains("overlay")) {
+    closePopupCard();
+  }
+});
 
 /**
  * Shows boardcards

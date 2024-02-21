@@ -37,6 +37,7 @@ input {
   font-size: 21px;
 }
 textarea {
+  resize: none;
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
